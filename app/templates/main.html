@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<style>
+form{
+    margin: auto;
+    width: 35%;
+    background-color: beige;
+    border: 2px solid #ccc;
+}
+
+.result{
+    margin: auto;
+    background-color: beige;
+    font-size: 10px;
+    width: 40%;
+    border: 2px solid #ccc;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+</style>
+
+<head>
+    <title>Прогнозирование соотношения Матрица - Наполнитель</title>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend>Введите параметры</legend>
+        Плотность, кг/м3
+        <input name="Плотность, кг/м3" type="number"
+        required>
+        <br>
+        <br>
+        Mодуль упругости, ГПа
+        <input name="Mодуль упругости, ГПа" type="number"
+        required>
+        <br>
+        <br>
+        Количество отвердителя, м.%
+        <input name="Количество отвердителя, м.%" type="number"
+        required>
+        <br>
+        <br>
+        Содержание эпоксидных групп,%_2
+        <input name="Содержание эпоксидных групп,%_2" type="number"
+        required>
+        <br>
+        <br>
+        Температура вспышки, С_2
+        <input name="Температура вспышки, С_2" type="number"
+        required>
+        <br>
+        <br>
+        Поверхностная плотность, г/м2
+        <input name="Поверхностная плотность, г/м2" type="number"
+        required>
+        <br>
+        <br>
+        Модуль упругости при растяжении, ГПа
+        <input name="Модуль упругости при растяжении, ГПа" type="number"
+        required>
+        <br>
+        <br>
+        Прочность при растяжении, МПа
+        <input name="Прочность при растяжении, МПа" type="number"
+        required>
+        <br>
+        <br>
+        Потребление смолы, г/м2
+        <input name="Потребление смолы, г/м2" type="number"
+        required>
+        <br>
+        <br>
+        Угол нашивки, град 0
+        <input name="Угол нашивки, град 0" type="number"
+        required>
+        <br>
+        <br>
+        Угол нашивки, град 90
+        <input name="Угол нашивки, град 90" type="number"
+        required>
+        <br>
+        <br>
+        Шаг нашивки
+        <input name="Шаг нашивки" type="number"
+        required>
+        <br>
+        <br>
+        Плотность нашивки
+        <input name="Плотность нашивки" type="number"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size:50px">
+            Прогнозное соотношение Матрица-Наполнитель
+        </p>
+        <p style="font-size:50px">{{result}}</p>
+    {% endif %}
+</div>
